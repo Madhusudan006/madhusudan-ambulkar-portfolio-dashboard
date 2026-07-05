@@ -81,7 +81,7 @@ st.markdown("""
     }
     .gpa-text {
         font-size: 0.95rem;
-        color: #FAFAFA; /* Updated to complete crisp white */
+        color: #FAFAFA;
         font-weight: 600;
         margin: 2px 0 0 0 !important;
         padding: 0 !important;
@@ -171,7 +171,7 @@ st.markdown("""
 
 # --- SIDEBAR: CONTACT & DOWNLOADS ---
 with st.sidebar:
-    st.image("https://via.placeholder.com/150", caption="Madhusudan Abhay Ambulkar")
+    # Image line and caption completely removed for a sleek, link-focused layout
     st.markdown("### 📍 Frankfurt am Main, Germany")
     st.write("---")
     
@@ -190,8 +190,9 @@ with st.sidebar:
     
     st.write("---")
     
+    # Updated backend logic to pull from ma_resume.pdf instead of sample_resume.pdf
     try:
-        with open("sample_resume.pdf", "rb") as pdf_file:
+        with open("ma_resume.pdf", "rb") as pdf_file:
             PDFbyte = pdf_file.read()
         st.download_button(
             label="📥 Download Full PDF Resume",
@@ -207,7 +208,7 @@ with st.sidebar:
             file_name="Resume_Placeholder.pdf",
             mime="text/plain",
             disabled=True,
-            help="Upload your sample_resume.pdf to the repository to enable downloading.",
+            help="Upload your ma_resume.pdf to the repository to enable downloading.",
             use_container_width=True
         )
 
@@ -244,7 +245,7 @@ with tab1:
         
     st.markdown('<div class="section-header">Education</div>', unsafe_allow_html=True)
     
-    # Entry 1: Master's Degree (Tight layout, margins zeroed to completely drop layout gaps)
+    # Entry 1: Master's Degree
     edu1_col1, edu1_col2 = st.columns([3, 1])
     with edu1_col1:
         st.markdown("""
@@ -256,7 +257,7 @@ with tab1:
     with edu1_col2:
         st.markdown('<div class="company-date" style="padding-top: 2px;">Frankfurt am Main, Germany<br>October 2024 – Present</div>', unsafe_allow_html=True)
         
-    # Entry 2: Bachelor's Degree (Tight layout, margins zeroed to completely drop layout gaps)
+    # Entry 2: Bachelor's Degree
     edu2_col1, edu2_col2 = st.columns([3, 1])
     with edu2_col1:
         st.markdown("""
@@ -340,7 +341,7 @@ with tab2:
 with tab3:
     st.markdown('<div class="section-header">Key Architectures & Implementations</div>', unsafe_allow_html=True)
     
-    # Project 1: Refructured Complete Sentences without Small Headings
+    # Project 1: Object Detection Focus
     with st.container():
         st.markdown("### 👁️ AI-Driven Object Detection System (Distributed Infrastructure Context)")
         st.markdown("""
@@ -375,10 +376,9 @@ with tab3:
             </div>
         """, unsafe_allow_html=True)
         st.markdown("""
-        *   Engineered a hardware-to-cloud telemetry layout utilizing **Zephyr RTOS** to stream raw industrial environmental metrics into a high-performance **6-stage ETL pipeline**.
-        *   Maintained absolute continuous data streaming integrity, achieving a **99.8% packet ingestion rate** with an end-to-end telemetry system latency of **29.7ms**.
-        *   Embedded threshold automation compliance engines matching international **ASHRAE 62.1 and WHO guidelines**, instantly isolating and classifying air toxicity flags into distinct emergency tiers.
-        *   Developed an interactive analytics dashboard in Python **Streamlit**, mapping fused timeseries data streams into instantaneous visual frameworks for non-technical stakeholders.
+        *   Designed and maintained a structured 6-stage ETL pipeline processing multi-sensor environmental data with 99.8% packet integrity and a mean end-to-end latency of 29.7ms.
+        *   Implemented compliance classification logic aligned with ASHRAE 62.1 and WHO standards, automatically evaluating fused sensor data against regulatory thresholds into four tiers (OK → CRITICAL).
+        *   Built a Python Streamlit analytics dashboard delivering sub-second visual updates for non-technical users; authored full system architecture and documentation.
         """)
         st.write("---")
 
@@ -395,7 +395,7 @@ with tab3:
             </div>
         """, unsafe_allow_html=True)
         st.markdown("""
-        *   Developed a dynamic **Power BI** commercial analytics engine analyzing critical multi-tier ATM execution variables, tracking revenue patterns, operational overheads, and hardware uptime metrics.
-        *   Automated comparative time-series reporting cycles using specialized **DAX measures** and time intelligence formulas, enabling instantaneous detection of underperforming network systems.
-        *   Designed high-contrast interactive layout graphs to consolidate transaction data flows, effectively lowering manual diagnostic processing durations by **30%**.
+        *   Developed a dynamic Power BI commercial analytics engine analyzing critical multi-tier ATM execution variables, tracking revenue patterns, operational overheads, and hardware uptime metrics.
+        *   Automated comparative time-series reporting cycles using specialized DAX measures and time intelligence formulas, enabling instantaneous detection of underperforming network systems.
+        *   Designed high-contrast interactive layout graphs to consolidate transaction data flows, effectively lowering manual diagnostic processing durations by 30%.
         """)
